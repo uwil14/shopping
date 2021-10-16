@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "672665439373",
+    "firebase_url": "https://shopping-pagina-default-rtdb.firebaseio.com",
+    "project_id": "shopping-pagina",
+    "storage_bucket": "shopping-pagina.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672665439373:android:a1abb7ecc4ee95d994a6c4",
+        "android_client_info": {
+          "package_name": "com.example.untitled"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "672665439373-h760egik8ppobn4fpoist4b93cm5e3tu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9G3C-6K1VoEv5Z3oCAjmOF6Gx_zfuE4w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "672665439373-h760egik8ppobn4fpoist4b93cm5e3tu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
