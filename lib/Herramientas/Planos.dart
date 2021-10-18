@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shopping/Herramientas/SegundoPiso.dart';
+import 'package:shopping/Herramientas/TercerPiso.dart';
 import 'package:shopping/Provider/UnicoProvider.dart';
 import 'package:sizer/sizer.dart';
+
+import 'PrimerPiso.dart';
 
 class Planos extends StatefulWidget {
   const Planos({Key? key}) : super(key: key);
@@ -19,14 +23,14 @@ class _PlanosState extends State<Planos> {
 
     return InteractiveViewer(
       transformationController: interactive,
+
       maxScale: 10,
-      child: Container(
-        width: 80.w,
-        margin: EdgeInsets.only(left: 20.w),
-        child: Center(
-          child: datosProvider.planta,
-        ),
-      ),
+      child: datosProvider.piso == 1
+
+          ? PrimerPiso()
+          : datosProvider.piso == 2
+              ? SegundoPiso()
+              : TercerPiso(),
     );
   }
 }

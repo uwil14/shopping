@@ -15,13 +15,10 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  @override
+
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-        statusBarIconBrightness: Brightness.dark,
-        statusBarBrightness: Brightness.dark));
+
     Stream<List<Tienda>> getTiendas() {
       final firestoreInstance = FirebaseFirestore.instance;
 
@@ -44,6 +41,7 @@ class _DashboardState extends State<Dashboard> {
         value: getTiendas(),
         initialData: [],
         child: Scaffold(
+          resizeToAvoidBottomInset: false,
           backgroundColor: Colors.white,
           body: Stack(
             children: [

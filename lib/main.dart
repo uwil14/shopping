@@ -1,4 +1,3 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +7,6 @@ import 'package:shopping/Herramientas/Dashboard.dart';
 import 'package:sizer/sizer.dart';
 import 'Herramientas/SplashScreen.dart';
 import 'Provider/UnicoProvider.dart';
-
 
 //Color Verde 0D7D34
 //Color Rojo E30614
@@ -24,10 +22,19 @@ Future<void> main() async {
       ChangeNotifierProvider(create: (context) => UnicoProvider()),
     ],
     child: Sizer(builder: (context, orientation, deviceType) {
-      return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: "Unico Shopping",
-        home: MyApp(),
+      return GestureDetector(
+        onTap: () {
+          FocusScopeNode currentFocus = FocusScope.of(context);
+
+          if (!currentFocus.hasPrimaryFocus) {
+            currentFocus.unfocus();
+          }
+        },
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: "Unico Shopping",
+          home: MyApp(),
+        ),
       );
     }),
   ));
@@ -36,11 +43,9 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-    ]);
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent, statusBarIconBrightness: Brightness.light,statusBarBrightness: Brightness.light));
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     Route _createRoute() {
       return PageRouteBuilder(
           pageBuilder: (context, animation, secondaryAnimation) =>
@@ -64,8 +69,7 @@ class MyApp extends StatelessWidget {
     }
 
     Future<void> authenticar(context) async {
-
-       Future<User?> signInUsingEmailPassword({
+      Future<User?> signInUsingEmailPassword({
         required String email,
         required String password,
         required BuildContext context,
@@ -87,7 +91,7 @@ class MyApp extends StatelessWidget {
         return user;
       }
 
-       User? user = await signInUsingEmailPassword(
+      User? user = await signInUsingEmailPassword(
         email: "admin@unico.com",
         password: "123456",
         context: context,
@@ -97,17 +101,13 @@ class MyApp extends StatelessWidget {
       }
     }
 
-    //authenticar(context);
+    authenticar(context);
     return MaterialApp(
+      title: "Unico Shopping",
       debugShowCheckedModeBanner: false,
-      home:
-
-      Dashboard()
-
-
-     // Scaffold(
-     //   backgroundColor: Colors.white,
-     // ),
+      home: Scaffold(
+        backgroundColor: Colors.white,
+      ),
     );
   }
 }

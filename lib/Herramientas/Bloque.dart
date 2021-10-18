@@ -52,7 +52,7 @@ class _BloqueState extends State<Bloque> {
                         fontFamily: "MontserratMediumItalic",
                         fontSize: MediaQuery.of(context).orientation ==
                                 Orientation.landscape
-                            ? 1.sp
+                            ? 1.2.sp
                             : 1.8.sp,
                         color: Colors.black,
                       ),
@@ -62,15 +62,14 @@ class _BloqueState extends State<Bloque> {
     }
 
     return Container(
-      padding: EdgeInsets.all(0.3.h),
-      margin: EdgeInsets.all(0.1.h),
+      margin: EdgeInsets.all(0.4.h),
       height: (MediaQuery.of(context).orientation == Orientation.landscape
           ? 5.5.h
           : 4.h),
       width: tipo.w *
           (MediaQuery.of(context).orientation == Orientation.landscape
               ? 2
-              : 3.9),
+              : 3.5),
       child: Container(
           child: Stack(
         children: [
@@ -162,7 +161,7 @@ class _BloqueState extends State<Bloque> {
                         fontFamily: "MontserratMediumItalic",
                         fontSize: MediaQuery.of(context).orientation ==
                                 Orientation.landscape
-                            ? 1.sp
+                            ? 1.5.sp
                             : 3.sp,
                         color: Colors.black,
                         backgroundColor: Colors.white54),

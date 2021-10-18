@@ -38,14 +38,29 @@ class UnicoProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  Widget _planta = PrimerPiso();
+  String _foco = "1";
 
-  Widget get planta {
-    return _planta;
+  String get foco {
+    return _foco;
   }
 
-  set planta(Widget valor) {
-    _planta = valor;
+  set foco(String valor) {
+    _foco = valor;
     notifyListeners();
   }
+
+
+
+
+  String _bloque = "1";
+
+  String get bloque {
+    return _bloque;
+  }
+
+  set bloque(String valor) {
+    _bloque = valor;
+    notifyListeners();
+  }
+
 }
